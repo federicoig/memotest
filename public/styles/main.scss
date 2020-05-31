@@ -88,7 +88,7 @@ body {
     body {
         div {
             h1.display-4 {
-                font-size: 3rem;
+                font-size: 2.5rem;
                 text-align: center;
                 margin: 0 0 4% 0;
             }
@@ -101,6 +101,12 @@ body {
     div.memotest {
         grid-template-columns: 49% 49%;
         grid-row: 50% 50%;
+        .item {
+            padding: 5%;
+            .color{
+                padding: 15%;
+            }
+        }
     }
 }
 
