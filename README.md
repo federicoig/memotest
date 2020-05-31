@@ -1,2 +1,2 @@
-# memotest
- simple memotest with colors
+# installation
+ this project uses bootstrap and express packages to work correctly in heroku
