@@ -194,6 +194,8 @@ body div #reset {
 }
 
 .correct-card {
-  visibility: "hidden";
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  visibility: hidden;
 }
 /*# sourceMappingURL=main.css.map */

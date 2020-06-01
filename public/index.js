@@ -26,12 +26,19 @@ startButton.addEventListener("click", function(){
     startButton.style.display = "none"
     displayItemColors(cards, pairs)
     hideItemColors(cards)
-    beginGame()
     resetButton.style.display = "block"
+    setTimeout( () => {
+        beginGame()
+    }, 2500)
 })
 
 resetButton.addEventListener("click", function() {
     window.location.reload()
+    /*
+    resetGame()
+    resetButton.style.display = "none"
+    startButton.style.display = "block"
+    */
 })
 
 function displayItemColors(cards, colors){
@@ -87,7 +94,6 @@ function checkUserClick(cardClicked){
 
 function checkIfGameEnded(){
     let counter = 0
-
     cards.forEach( (card) => {
         if (card.classList.contains("correct-card")){
             counter++
@@ -99,4 +105,20 @@ function checkIfGameEnded(){
     if (counter === 16){
         winMessage.style.display = "block"
     }
+}
+
+function resetGame(){
+    user = []
+    winMessage.style.display = "none"
+    memotest.forEach( function(item) {
+        item.className = ""
+        item.classList.add("item")
+        cards.forEach( function (card) {
+            card.className = ""
+        })
+    })
+    cards.forEach( function (card) {
+        card.className = ""
+        card.classList.add("color")
+    })
 }
