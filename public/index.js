@@ -33,12 +33,9 @@ startButton.addEventListener("click", function(){
 })
 
 resetButton.addEventListener("click", function() {
-    window.location.reload()
-    /*
     resetGame()
     resetButton.style.display = "none"
     startButton.style.display = "block"
-    */
 })
 
 function displayItemColors(cards, colors){
@@ -47,6 +44,7 @@ function displayItemColors(cards, colors){
     })
     randomColors.forEach( (color, i) => {
         cards[i].classList.add(color)
+        cards[i].style.opacity = "1"
     })
 }
 
@@ -108,11 +106,13 @@ function checkIfGameEnded(){
 }
 
 function resetGame(){
-    user = []
     winMessage.style.display = "none"
     memotest.forEach( function(item) {
         item.className = ""
         item.classList.add("item")
+        item.addEventListener("click", () => {
+            user = []
+        })
         cards.forEach( function (card) {
             card.className = ""
         })
