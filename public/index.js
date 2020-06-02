@@ -22,6 +22,8 @@ let pairs = ["teal",
     "orange"
 ]
 
+let turnCounter = 0
+
 startButton.addEventListener("click", function(){
     startButton.style.display = "none"
     displayItemColors(cards, pairs)
@@ -30,6 +32,7 @@ startButton.addEventListener("click", function(){
     setTimeout( () => {
         beginGame()
     }, 2500)
+    turnCounter = 0
 })
 
 resetButton.addEventListener("click", function() {
@@ -64,6 +67,7 @@ function beginGame(){
             item.firstElementChild.style.opacity = "1"
             user.push(item.firstElementChild)
             if (user.length === 2){
+                turnCounter++
                 checkUserClick(user)
             }
         })
@@ -102,6 +106,7 @@ function checkIfGameEnded(){
     })
     if (counter === 16){
         winMessage.style.display = "block"
+        winMessage.innerHTML = `It took you ${turnCounter} turns to win!`
     }
 }
 
