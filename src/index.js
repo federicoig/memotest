@@ -22,6 +22,9 @@ let pairs = ["teal",
     "orange"
 ]
 
+const audio = document.querySelector("#audio")
+audio.volume = 0.3;
+
 let turnCounter = 0
 
 startButton.addEventListener("click", function(){
@@ -33,6 +36,8 @@ startButton.addEventListener("click", function(){
         beginGame()
     }, 2500)
     turnCounter = 0
+    audio.currentTime = 1
+    audio.play()
 })
 
 resetButton.addEventListener("click", function() {
@@ -127,3 +132,5 @@ function resetGame(){
         card.classList.add("color")
     })
 }
+
+
